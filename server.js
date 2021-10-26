@@ -7,7 +7,7 @@ import logger from 'morgan'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as usersRouter } from './routes/users.js'
+import { router as todosRouter } from './routes/todos.js'
 
 // set up app
 const app = express()
@@ -31,8 +31,11 @@ app.use(
 )
 
 // mounted routers
+
+// localhost:3000/ -> indexRouter
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+// localhost:3000/todos -> todosRouter
+app.use('/todos', todosRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
