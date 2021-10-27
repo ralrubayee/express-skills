@@ -1,10 +1,12 @@
 import * as todoDb from "../data/todo-db.js"
 
 function index(req, res) {
+  console.log(req.time)
   todoDb.find({}, function(error, todos) {
     res.render('todos/index', {
       todos: todos,
-      error: error
+      error: error,
+      time: req.time
     })
   })
 }
@@ -20,7 +22,12 @@ function show(req, res) {
   })
 }
 
+function newTodo(req, res) {
+  res.render("todos/new")
+}
+
 export {
   index,
-  show
+  show,
+  newTodo as new
 }

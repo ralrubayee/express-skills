@@ -7,7 +7,7 @@
   <title>Express To-Do</title>
 </head>
 <body>
-  <h1>Todos</h1>
+  <h1>Todos as of <%= time %> </h1>
   <% if(error) { %>
     <h2><%= error %></h2>
   <% } %>
@@ -20,5 +20,10 @@
       </li>
     <% }) %>
   </ul>
+  <a href="/todos/new">Add To-Do</a>
+  <!-- create a link to show a form that our 
+    user will create their new todo on -->
+  <!-- when the form is submitted, add the todo
+    to the fake todo db -->
 </body>
 </html>
