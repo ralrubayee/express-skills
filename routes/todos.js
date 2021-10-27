@@ -19,6 +19,9 @@ router.get("/:id", todosCtrl.show)
 // localhost:3000/todos - POST
 router.post("/", todosCtrl.create)
 
+// localhost:3000/todos/:id - DELETE
+router.delete("/:id", todosCtrl.delete)
+
 
 export {
   router
