@@ -31,7 +31,17 @@ const findById = (id, callback) =>{
   }
 }
 
+function create(todo, callback) {
+  console.log(todo)
+  todo._id = Date.now() % 1000000
+  todo.done = false
+  console.log(todo)
+  todos.push(todo)
+  return callback(null, todo)
+}
+
 export { 
 	find,
-  findById
+  findById,
+  create,
 }
