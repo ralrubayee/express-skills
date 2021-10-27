@@ -1,11 +1,17 @@
 import { Router } from 'express'
 import * as todosCtrl from "../controllers/todos.js"
+import * as catsCtrl from "../controllers/cats.js"
 const router = Router()
 
 /* GET todos listing. */
 
 // localhost:3000/todos
 router.get('/', todosCtrl.index)
+// localhost:3000/todos/:id
+// localhost:3000/todos/taco
+// localhost:3000/todos/15644165
+// localhost:3000/todos/banana
+router.get("/:id", todosCtrl.show)
 
 export {
   router

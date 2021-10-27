@@ -9,6 +9,18 @@ function index(req, res) {
   })
 }
 
+function show(req, res) {
+  console.log(req.params.id)
+  todoDb.findById(req.params.id, function(error, todo) {
+    console.log(todo)
+    res.render("todos/show", {
+      todo: todo,
+      error: error
+    })
+  })
+}
+
 export {
-  index
+  index,
+  show
 }
