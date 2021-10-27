@@ -1,6 +1,5 @@
 import { Router } from 'express'
 import * as todosCtrl from "../controllers/todos.js"
-import * as catsCtrl from "../controllers/cats.js"
 const router = Router()
 
 /* GET todos listing. */
