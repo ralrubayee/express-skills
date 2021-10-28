@@ -40,8 +40,21 @@ function create(todo, callback) {
   return callback(null, todo)
 }
 
+function findByIdAndDelete(id, callback) {
+  try { 
+    // Find the index based on the _id of the todo object
+    const idx = todos.findIndex(todo => todo._id == parseInt(id))
+    const deletedTodo = todos.splice(idx, 1)
+    if (!deletedTodo.length ) throw new Error ('No todo was deleted')
+    return callback(null, deletedTodo[0])
+  } catch(error) {
+    return callback(error, null)
+  }
+}
+
 export { 
 	find,
   findById,
   create,
+  findByIdAndDelete,
 }

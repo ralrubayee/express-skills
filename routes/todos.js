@@ -20,6 +20,9 @@ router.get("/:id", todosCtrl.show)
 router.post("/", todosCtrl.create)
 
 // localhost:3000/todos/:id - DELETE
+// localhost:3000/todos/6289346 - DELETE
+// localhost:3000/todos/taco - DELETE
+// localhost:3000/todos/banana - DELETE
 router.delete("/:id", todosCtrl.delete)
 
 
